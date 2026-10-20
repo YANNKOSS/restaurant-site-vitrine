@@ -392,7 +392,7 @@
             </div>
 
             <div class="gallerie_image">
-                <img src="image/pa.jpg" >
+                <img src="image/p.jpg" >
                 <h3>FOOD</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Ducimus exercitationem veniam, doloremque,</p>
@@ -457,7 +457,7 @@
         </div>
 
         <div class="reservation_text">
-            <h2 class="name">Rosalie</h2>
+            <h2 class="name">Mme Rosalie</h2>
             <div class="reservation_icon">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -487,7 +487,7 @@
         </div>
 
         <div class="reservation_text">
-            <h2 class="name">RINGO</h2>
+            <h2 class="name">Mme Agnes </h2>
             <div class="reservation_icon">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -633,5 +633,30 @@
             </div>
         </div>
     </div>
+    <script>
+document.querySelectorAll(
+    'section nav .icon i, .menu .menu_card .small_card i'
+).forEach(function (icone) {
+    icone.setAttribute('role', 'button');
+    icone.setAttribute('tabindex', '0');
+    icone.setAttribute('aria-pressed', 'false');
+
+    function basculerCouleur() {
+        const active = icone.classList.toggle('is-active');
+        icone.setAttribute('aria-pressed', String(active));
+    }
+
+    icone.addEventListener('click', basculerCouleur);
+
+    icone.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            basculerCouleur();
+        }
+    });
+});
+</script>
+</body>
+</html>
 </body>
 </html>
